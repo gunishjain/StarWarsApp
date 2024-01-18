@@ -2,6 +2,7 @@ package com.gunishjain.starwarsapp
 
 import android.app.Application
 import com.gunishjain.starwarsapp.di.component.ApplicationComponent
+import com.gunishjain.starwarsapp.di.module.ApplicationModule
 
 class StarWarsApplication : Application() {
 

@@ -1,10 +1,10 @@
-package com.gunishjain.starwarsapp
+package com.gunishjain.starwarsapp.ui.character
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.gunishjain.starwarsapp.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class CharacterListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

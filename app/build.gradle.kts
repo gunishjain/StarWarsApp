@@ -61,8 +61,7 @@ dependencies {
     implementation("com.google.dagger:dagger:2.42")
     kapt("com.google.dagger:dagger-compiler:2.42")
 
-
-
+    implementation("androidx.paging:paging-runtime:3.2.1")
 
 
 }
