@@ -1,5 +1,6 @@
 package com.gunishjain.starwarsapp.data.repository.paging
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.gunishjain.starwarsapp.data.api.NetworkService
@@ -16,6 +17,7 @@ class CharacterPagingSource(private val networkService: NetworkService) :
             val response = networkService.getCharacterList(
                 page = page
             )
+            Log.d("JAIN",response.characters.size.toString())
 
             LoadResult.Page(
                 data = response.characters,

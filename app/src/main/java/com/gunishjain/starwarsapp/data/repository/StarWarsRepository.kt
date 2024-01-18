@@ -7,8 +7,11 @@ import com.gunishjain.starwarsapp.data.api.NetworkService
 import com.gunishjain.starwarsapp.data.model.Character
 import com.gunishjain.starwarsapp.data.repository.paging.CharacterPagingSource
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class StarWarsRepository (private val networkService: NetworkService) {
+@Singleton
+class StarWarsRepository @Inject constructor(private val networkService: NetworkService) {
 
     fun getCharacters(): Flow<PagingData<Character>> {
         return Pager(
@@ -20,8 +23,6 @@ class StarWarsRepository (private val networkService: NetworkService) {
             }
         ).flow
     }
-
-
 
 
 }

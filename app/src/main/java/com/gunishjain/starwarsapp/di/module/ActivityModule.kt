@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.gunishjain.starwarsapp.data.repository.StarWarsRepository
 import com.gunishjain.starwarsapp.di.ActivityContext
 import com.gunishjain.starwarsapp.ui.base.ViewModelProviderFactory
+import com.gunishjain.starwarsapp.ui.character.CharacterAdapter
 import com.gunishjain.starwarsapp.ui.character.CharacterListViewModel
 import dagger.Module
 import dagger.Provides
@@ -26,4 +27,6 @@ class ActivityModule(private val activity: AppCompatActivity) {
                 CharacterListViewModel(repository)
             })[CharacterListViewModel::class.java]
     }
+    @Provides
+    fun provideCharacterListAdapter() = CharacterAdapter()
 }
