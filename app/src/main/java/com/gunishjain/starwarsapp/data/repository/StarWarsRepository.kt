@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import com.gunishjain.starwarsapp.data.api.NetworkService
 import com.gunishjain.starwarsapp.data.model.Character
 import com.gunishjain.starwarsapp.data.repository.paging.CharacterPagingSource
+import com.gunishjain.starwarsapp.data.repository.paging.SearchCharacterPagingSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -20,6 +21,17 @@ class StarWarsRepository @Inject constructor(private val networkService: Network
             ),
             pagingSourceFactory = {
                 CharacterPagingSource(networkService)
+            }
+        ).flow
+    }
+
+    fun getSearchResult(query: String) : Flow<PagingData<Character>> {
+        return Pager(
+            config = PagingConfig(
+                pageSize = 1
+            ),
+            pagingSourceFactory = {
+                SearchCharacterPagingSource(networkService, query)
             }
         ).flow
     }

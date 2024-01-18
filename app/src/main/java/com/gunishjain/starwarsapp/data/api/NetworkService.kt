@@ -11,4 +11,7 @@ interface NetworkService {
     @GET("people")
     suspend fun getCharacterList(@Query("page") page: Int): CharacterResponse
 
+    @GET("people/")
+    suspend fun searchCharacterList(@Query("search") query: String, @Query("page") page: Int): CharacterResponse
+
 }
